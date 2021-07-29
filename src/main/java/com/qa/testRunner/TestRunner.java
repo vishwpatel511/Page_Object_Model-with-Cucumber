@@ -10,9 +10,15 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 @CucumberOptions(
-        features = "src/main/java/Features",
-        glue = {"stepDefinitions"},
+        features = {"src/main/java/com/qa/features/indexpage.feature",
+        			"src/main/java/com/qa/features/homepage.feature",
+        			"src/main/java/com/qa/features/productspage.feature",
+        			"src/main/java/com/qa/features/shoppingcartpage.feature",
+        			"src/main/java/com/qa/features/Personalinfomodalpage.feature"},
+        glue = {"com.qa.stepdefinitions"},
         tags = {"~@Ignore"},
+        dryRun = false,
+        monochrome = true,
         format = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",
